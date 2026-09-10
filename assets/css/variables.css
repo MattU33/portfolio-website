@@ -1,0 +1,16 @@
+:root {
+  /* Color Palette */
+  --primary-color: #2563eb;       /* Royal Blue */
+  --primary-hover: #1d4ed8;       /* Darker Blue */
+  --dark-bg: #1e293b;             /* Dark Slate Header/Footer */
+  --light-bg: #f8fafc;            /* Off-White Page Background */
+  --card-bg: #ffffff;             /* Pure White Cards */
+  --text-main: #0f172a;           /* Dark Slate Text (High Contrast) */
+  --text-muted: #64748b;          /* Muted Secondary Text */
+  --border-color: #e2e8f0;        /* Subtle Card Borders */
+
+  /* Fonts & Spacing */
+  --font-main: system-ui, -apple-system, sans-serif;
+  --max-width: 1100px;
+  --radius: 8px;
+}

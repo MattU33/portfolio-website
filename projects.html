@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Matt Upton</title>
+  <meta name="description" content="Explore IT support and web development projects by Matt Upton.">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">Matt Upton</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero-split">
+    <div class="hero-content">
+      <h1>Featured Projects</h1>
+      <p>A showcase of custom web applications, scripting logic, and systematic IT infrastructure solutions.</p>
+    </div>
+
+    <div class="hero-bg-angled">
+      <div class="angled-card">
+        <h2>Development &amp; Ops</h2>
+        <p>Combining functional JavaScript logic with structured systems troubleshooting.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="content-wrapper">
+    <div style="margin-bottom: 2rem;">
+      <input type="text" id="projectSearch" placeholder="Search projects by keyword (e.g., JavaScript, Git, Security)..." 
+             style="width: 100%; padding: 0.8rem 1rem; border: 2px solid var(--bg-dark); font-size: 1rem; font-family: inherit;">
+    </div>
+
+    <div class="projects-grid" id="projectsContainer">
+      
+      <article class="project-card" data-tags="javascript logic web development">
+        <div>
+          <span class="tag-badge">JavaScript / Logic</span>
+          <h2>Canteen &amp; Order Systems</h2>
+          <p>Interactive ordering and membership calculation tools built with robust input validation, array logic, and custom pricing algorithms.</p>
+        </div>
+        <a href="contact.html" class="btn-main">View Logic Details</a>
+      </article>
+
+      <article class="project-card" data-tags="it operations security safety lab risk">
+        <div>
+          <span class="tag-badge" style="background: var(--bg-dark);">IT Operations / Security</span>
+          <h2>Lab Risk &amp; Health Assessment</h2>
+          <p>Comprehensive safety protocols, electrostatic discharge (ESD) mitigation, and hardware handling standards for workstation environments.</p>
+        </div>
+        <a href="contact.html" class="btn-main">Read Safety Report</a>
+      </article>
+
+      <article class="project-card" data-tags="devops git version control terminal">
+        <div>
+          <span class="tag-badge">DevOps / Git</span>
+          <h2>Version Control Synchronization</h2>
+          <p>Structured resolution of diverged branch histories, commit tracking, and terminal-based repository workflows in VS Code.</p>
+        </div>
+        <a href="contact.html" class="btn-main">View Workflow</a>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Matt Upton. All Rights Reserved. | IT Support &amp; Front-End Web Development</p>
+  </footer>
+
+  <script>
+    document.getElementById('projectSearch').addEventListener('input', function(e) {
+      const query = e.target.value.toLowerCase();
+      const cards = document.querySelectorAll('.project-card');
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const tags = card.getAttribute('data-tags').toLowerCase();
+        if (text.includes(query) || tags.includes(query)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,371 @@
+/* ==========================================================================
+   Clean & Fully Responsive Layout (Matt Upton Portfolio)
+   ========================================================================== */
+:root {
+  --primary: #d97706;       /* Warm Amber Accent */
+  --bg-dark: #142e2b;       /* Deep Forest Green */
+  --bg-light: #f4f3ef;      /* Warm Stone Surface */
+  --card-bg: #ffffff;       /* Off-White Surface */
+  --text-dark: #111827;     /* Dark Charcoal Text */
+  --text-muted: #4b5563;    /* Grey Subtext */
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Dynamic Header & Responsive Navigation */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.2rem 5%;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: clamp(1.2rem, 4vw, 1.4rem);
+  font-weight: 700;
+  color: var(--bg-dark);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: opacity 0.2s;
+  padding-bottom: 0.2rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+/* Keyboard Focus States for Accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Dark Nav Override for Light Background Pages */
+.nav-dark a {
+  color: #111827 !important;
+}
+
+.nav-dark a:hover,
+.nav-dark a.active {
+  color: var(--primary) !important;
+  border-bottom: 2px solid var(--primary);
+}
+
+/* Responsive Hero Layouts */
+.hero-split {
+  position: relative;
+  padding: clamp(5rem, 10vh, 6rem) 5% 3rem 5%;
+  display: flex;
+  align-items: center;
+  min-height: 280px;
+}
+
+.hero-split-full {
+  position: relative;
+  padding: clamp(6rem, 12vh, 8rem) 5% 3rem 5%;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.hero-content {
+  width: 48%;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  line-height: 1.15;
+  color: var(--bg-dark);
+  margin-bottom: 0.8rem;
+}
+
+.hero-content p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  max-width: 460px;
+}
+
+/* Angled Green Section */
+.hero-bg-angled {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  background-color: var(--bg-dark);
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 14%;
+  padding-right: 5%;
+}
+
+.angled-card {
+  color: #ffffff;
+  max-width: 380px;
+}
+
+.angled-card h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.angled-card p {
+  color: #a3b8b5;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+}
+
+/* Action Buttons */
+.btn-main {
+  display: inline-block;
+  background-color: var(--bg-dark);
+  color: #ffffff;
+  padding: 0.75rem 1.6rem;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-main:hover {
+  background-color: var(--primary);
+}
+
+/* Responsive Feature Icon Bar */
+.feature-bar {
+  background-color: #0d1e1c;
+  padding: 2rem 5% 1.5rem 5%;
+  position: relative;
+  z-index: 3;
+}
+
+.feature-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-icon {
+  width: 52px;
+  height: 52px;
+  background-color: var(--primary);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  margin-top: -3.2rem;
+  border: 3px solid #0d1e1c;
+}
+
+.feature-item h3 {
+  color: #ffffff;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+
+.feature-item p {
+  color: #a3b8b5;
+  font-size: 0.85rem;
+  max-width: 280px;
+}
+
+/* Content Layouts & Grid with Flex Expansion to Prevent Gaps */
+.content-wrapper {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 5%;
+  flex-grow: 1;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--bg-dark);
+  padding: 1.5rem;
+  box-shadow: 5px 5px 0px var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card h2 {
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  color: var(--bg-dark);
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.tag-badge {
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  align-self: flex-start;
+  margin-bottom: 0.8rem;
+}
+
+/* Form Styles */
+.form-card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--bg-dark);
+  padding: 1.8rem;
+  max-width: 580px;
+  margin: 0 auto;
+  box-shadow: 5px 5px 0px var(--bg-dark);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
+  color: var(--bg-dark);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 2px solid var(--bg-dark);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+/* Universal Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem 5%;
+  background: var(--bg-dark);
+  color: #a3b8b5;
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
+/* Mobile & Tablet Adaptation */
+@media (max-width: 850px) {
+  header {
+    position: relative;
+    background-color: var(--bg-light);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .nav-links a {
+    color: var(--bg-dark);
+  }
+
+  .hero-split,
+  .hero-split-full {
+    flex-direction: column;
+    padding-top: 2rem;
+    min-height: auto;
+  }
+
+  .hero-content {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .hero-bg-angled {
+    position: relative;
+    width: 100%;
+    clip-path: none;
+    padding: 2rem 1.5rem;
+    border-radius: 4px;
+  }
+
+  .feature-icon {
+    margin-top: 0;
+  }
+}
