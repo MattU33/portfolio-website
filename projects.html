@@ -7,6 +7,18 @@
   <meta name="description" content="Explore IT support and web development projects by Matt Upton.">
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Smooth sliding dropdown for comments */
+    .comment-dropdown {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .comment-dropdown.open {
+      max-height: 500px;
+      transition: max-height 0.4s ease-in;
+    }
+  </style>
 </head>
 <body>
 
@@ -44,31 +56,85 @@
 
     <div class="projects-grid" id="projectsContainer">
       
-      <article class="project-card" data-tags="javascript logic web development">
+      <!-- Project 1: Canteen & Order Systems -->
+      <article class="project-card" data-tags="javascript logic web development" style="display: flex; flex-direction: column; justify-content: space-between;">
         <div>
+          <img src="anton-murygin-jD7WYFNJ-0s-unsplash.jpg" alt="Canteen counter and service area showing food preparation and order management setup" style="width: 100%; height: 160px; object-fit: cover; margin-bottom: 1rem; border: 1px solid #ccc;" />
           <span class="tag-badge">JavaScript / Logic</span>
           <h2>Canteen &amp; Order Systems</h2>
           <p>Interactive ordering and membership calculation tools built with robust input validation, array logic, and custom pricing algorithms.</p>
         </div>
-        <a href="contact.html" class="btn-main">View Logic Details</a>
+        
+        <div style="margin-top: 1.5rem;">
+          <a href="contact.html" class="btn-main" style="display: inline-block; margin-bottom: 1rem;">View Logic Details</a>
+          
+          <div style="border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 0.5rem;">
+            <button type="button" class="btn-main" onclick="toggleComments('proj-1')" style="width: 100%; text-align: center; border: none; cursor: pointer;">Leave a Comment</button>
+            
+            <div id="dropdown-proj-1" class="comment-dropdown">
+              <form id="form-proj-1" onsubmit="postComment(event, 'proj-1')" style="display: flex; flex-direction: column; gap: 0.5rem; margin: 0.8rem 0;">
+                <input type="text" id="author-proj-1" placeholder="Your Name" required aria-label="Your Name for comment" style="padding: 0.5rem; font-size: 0.9rem; border: 1px solid #ccc;" />
+                <textarea id="text-proj-1" placeholder="Add a comment..." rows="2" required aria-label="Your comment text" style="padding: 0.5rem; font-size: 0.9rem; border: 1px solid #ccc;"></textarea>
+                <button type="submit" class="btn-main" style="padding: 0.4rem; font-size: 0.85rem; border: none; cursor: pointer;">Post</button>
+              </form>
+              <div id="list-proj-1" style="display: flex; flex-direction: column; gap: 0.5rem; max-height: 150px; overflow-y: auto;" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
       </article>
 
-      <article class="project-card" data-tags="it operations security safety lab risk">
+      <!-- Project 2: Lab Risk & Health Assessment -->
+      <article class="project-card" data-tags="it operations security safety lab risk" style="display: flex; flex-direction: column; justify-content: space-between;">
         <div>
+          <img src="josh-sorenson-nVeTGyYosKY-unsplash.jpg" alt="Computer laboratory workstations setup for IT operations and safety risk assessments" style="width: 100%; height: 160px; object-fit: cover; margin-bottom: 1rem; border: 1px solid #ccc;" />
           <span class="tag-badge" style="background: var(--bg-dark);">IT Operations / Security</span>
           <h2>Lab Risk &amp; Health Assessment</h2>
           <p>Comprehensive safety protocols, electrostatic discharge (ESD) mitigation, and hardware handling standards for workstation environments.</p>
         </div>
-        <a href="contact.html" class="btn-main">Read Safety Report</a>
+
+        <div style="margin-top: 1.5rem;">
+          <a href="contact.html" class="btn-main" style="display: inline-block; margin-bottom: 1rem;">Read Safety Report</a>
+          
+          <div style="border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 0.5rem;">
+            <button type="button" class="btn-main" onclick="toggleComments('proj-2')" style="width: 100%; text-align: center; border: none; cursor: pointer;">Leave a Comment</button>
+            
+            <div id="dropdown-proj-2" class="comment-dropdown">
+              <form id="form-proj-2" onsubmit="postComment(event, 'proj-2')" style="display: flex; flex-direction: column; gap: 0.5rem; margin: 0.8rem 0;">
+                <input type="text" id="author-proj-2" placeholder="Your Name" required aria-label="Your Name for comment" style="padding: 0.5rem; font-size: 0.9rem; border: 1px solid #ccc;" />
+                <textarea id="text-proj-2" placeholder="Add a comment..." rows="2" required aria-label="Your comment text" style="padding: 0.5rem; font-size: 0.9rem; border: 1px solid #ccc;"></textarea>
+                <button type="submit" class="btn-main" style="padding: 0.4rem; font-size: 0.85rem; border: none; cursor: pointer;">Post</button>
+              </form>
+              <div id="list-proj-2" style="display: flex; flex-direction: column; gap: 0.5rem; max-height: 150px; overflow-y: auto;" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
       </article>
 
-      <article class="project-card" data-tags="devops git version control terminal">
+      <!-- Project 3: Version Control Synchronization -->
+      <article class="project-card" data-tags="devops git version control terminal" style="display: flex; flex-direction: column; justify-content: space-between;">
         <div>
+          <img src="patrick-martin-UMlT0bviaek-unsplash.jpg" alt="Terminal code interface displaying version control scripts and branch synchronization syntax" style="width: 100%; height: 160px; object-fit: cover; margin-bottom: 1rem; border: 1px solid #ccc;" />
           <span class="tag-badge">DevOps / Git</span>
           <h2>Version Control Synchronization</h2>
           <p>Structured resolution of diverged branch histories, commit tracking, and terminal-based repository workflows in VS Code.</p>
         </div>
-        <a href="contact.html" class="btn-main">View Workflow</a>
+
+        <div style="margin-top: 1.5rem;">
+          <a href="contact.html" class="btn-main" style="display: inline-block; margin-bottom: 1rem;">View Workflow</a>
+          
+          <div style="border-top: 1px solid #ccc; padding-top: 1rem; margin-top: 0.5rem;">
+            <button type="button" class="btn-main" onclick="toggleComments('proj-3')" style="width: 100%; text-align: center; border: none; cursor: pointer;">Leave a Comment</button>
+            
+            <div id="dropdown-proj-3" class="comment-dropdown">
+              <form id="form-proj-3" onsubmit="postComment(event, 'proj-3')" style="display: flex; flex-direction: column; gap: 0.5rem; margin: 0.8rem 0;">
+                <input type="text" id="author-proj-3" placeholder="Your Name" required aria-label="Your Name for comment" style="padding: 0.5rem; font-size: 0.9rem; border: 1px solid #ccc;" />
+                <textarea id="text-proj-3" placeholder="Add a comment..." rows="2" required aria-label="Your comment text" style="padding: 0.5rem; font-size: 0.9rem; border: 1px solid #ccc;"></textarea>
+                <button type="submit" class="btn-main" style="padding: 0.4rem; font-size: 0.85rem; border: none; cursor: pointer;">Post</button>
+              </form>
+              <div id="list-proj-3" style="display: flex; flex-direction: column; gap: 0.5rem; max-height: 150px; overflow-y: auto;" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
       </article>
 
     </div>
@@ -78,6 +144,7 @@
     <p>&copy; 2026 Matt Upton. All Rights Reserved. | IT Support &amp; Front-End Web Development</p>
   </footer>
 
+  <!-- Search & Toggle Script (Global Scope) -->
   <script>
     document.getElementById('projectSearch').addEventListener('input', function(e) {
       const query = e.target.value.toLowerCase();
@@ -93,6 +160,110 @@
         }
       });
     });
+
+    // Make toggle function globally accessible
+    window.toggleComments = function(projectId) {
+      const dropdown = document.getElementById(`dropdown-${projectId}`);
+      if (dropdown) {
+        dropdown.classList.toggle('open');
+      }
+    };
+  </script>
+
+  <!-- Firebase CRUD & Real-Time Sync Script -->
+  <script type="module">
+    import { db } from "./firebase/config.js";
+    import { 
+      collection, 
+      addDoc, 
+      onSnapshot, 
+      doc, 
+      updateDoc, 
+      deleteDoc, 
+      query, 
+      where,
+      orderBy, 
+      serverTimestamp 
+    } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+    const projectIds = ['proj-1', 'proj-2', 'proj-3'];
+    const commentsRef = collection(db, "project_comments");
+
+    window.postComment = async (e, projectId) => {
+      e.preventDefault();
+      const author = document.getElementById(`author-${projectId}`).value.trim();
+      const text = document.getElementById(`text-${projectId}`).value.trim();
+      if (!author || !text) return;
+
+      try {
+        await addDoc(commentsRef, {
+          projectId: projectId,
+          author: author,
+          text: text,
+          timestamp: serverTimestamp()
+        });
+        document.getElementById(`form-${projectId}`).reset();
+      } catch (error) {
+        console.error("Error adding comment:", error);
+      }
+    };
+
+    projectIds.forEach((projectId) => {
+      const listContainer = document.getElementById(`list-${projectId}`);
+      const q = query(commentsRef, where("projectId", "==", projectId), orderBy("timestamp", "asc"));
+
+      onSnapshot(q, (snapshot) => {
+        listContainer.innerHTML = "";
+        snapshot.forEach((docSnap) => {
+          const data = docSnap.data();
+          const id = docSnap.id;
+          const dateStr = data.timestamp ? new Date(data.timestamp.toDate()).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : "Just now";
+
+          const commentBox = document.createElement("div");
+          commentBox.style.cssText = "padding: 0.5rem; background: #f9f9f9; border: 1px solid #ddd; font-size: 0.8rem;";
+          commentBox.innerHTML = `
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.2rem;">
+              <strong>${escapeHtml(data.author)}</strong>
+              <span style="color: #666; font-size: 0.75rem;">${dateStr}</span>
+            </div>
+            <p id="text-${id}" style="margin-bottom: 0.4rem; word-break: break-word;">${escapeHtml(data.text)}</p>
+            <div style="display: flex; gap: 0.3rem;">
+              <button type="button" onclick="handleEdit('${id}')" style="padding: 0.1rem 0.3rem; font-size: 0.7rem; cursor: pointer;">Edit</button>
+              <button type="button" onclick="handleDelete('${id}')" style="padding: 0.1rem 0.3rem; font-size: 0.7rem; cursor: pointer; background: #fee;">Delete</button>
+            </div>
+          `;
+          listContainer.appendChild(commentBox);
+        });
+      });
+    });
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, (m) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+      }[m]));
+    }
+
+    window.handleEdit = async (id) => {
+      const currentText = document.getElementById(`text-${id}`).innerText;
+      const newText = prompt("Update comment:", currentText);
+      if (!newText || newText.trim() === currentText) return;
+
+      try {
+        await updateDoc(doc(db, "project_comments", id), { text: newText.trim() });
+      } catch (error) {
+        console.error("Error updating comment:", error);
+      }
+    };
+
+    window.handleDelete = async (id) => {
+      if (!confirm("Delete this comment?")) return;
+
+      try {
+        await deleteDoc(doc(db, "project_comments", id));
+      } catch (error) {
+        console.error("Delete error:", error);
+      }
+    };
   </script>
 
 </body>
